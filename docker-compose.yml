@@ -2,7 +2,7 @@ version: '3' # composeファイルのバージョン指定
 services:
   mysql:
     # コンテナに名前をつける
-    container_name: mysql
+    container_name: mysql_todo
     # Dockerfileのあるディレクトリのパスを指定する
     build:
       context: .

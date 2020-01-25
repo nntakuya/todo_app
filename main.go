@@ -1,33 +1,20 @@
 package main
 
 import (
-  "fmt"
-  "database/sql"
-  _ "github.com/go-sql-driver/mysql"
-)
-
-const DRIVER = "mysql"
-const DSN = "root:password@tcp(mysql:3306)/matsun_dev"
-
+  "github.com/gin-gonic/gin"
+  "github.com/nntakuya/todo_app/db"
 
 func main() {
-  db, err := sql.Open(DRIVER, DSN)
-  if err != nil {
-      fmt.Println("Openエラー")
-  } else {
-    fmt.Println("Open OK!")
-  }
+  r := gin.Default()
+  r.GET("/", func(c *gin.Context) {
+    c.String(200, "Hello, World")
+  })
 
-  err = db.Ping()
-  if err != nil {
-    fmt.Println("接続失敗")
-  } else {
-    fmt.Println("接続OK")
-  }
+  db.Init()
+
+  r.Run()
 
   db.Close()
-
-
 }
 
 
