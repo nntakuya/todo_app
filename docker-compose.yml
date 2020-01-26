@@ -34,7 +34,7 @@ services:
     container_name: todo_app 
     tty: true #コンテナの起動永続化
     volumes:
-      - .:/go/src/work #マウントディレクトリ指定
+      - .:/go/src/jithub.com/nntakuya/todo_app #マウントディレクトリ指定
     ports:
       - 8080:8080
  # トップレベルでvolumesを定義すると、各サービスからボリュームを参照できる

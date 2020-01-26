@@ -12,7 +12,7 @@ var (
 
 // Init is initialize db from mainfunction
 func Init() {
-  db, err = gorm.Open("mysql", "root:password@(:3030)/todo_dev")
+  db, err = gorm.Open("mysql", "root:password@(:3036)/todo_dev")
 
   if err != nil {
     panic(err)
