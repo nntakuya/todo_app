@@ -11,7 +11,7 @@ services:
     hostname: mysql
     # 外部に公開するポートを指定
     ports:
-      - "3306:3306"
+      - 3306:3306
     # mysqlの指定
     environment:
       MYSQL_USER: root
@@ -23,9 +23,9 @@ services:
     # パスをボリュームとしてマウント
     # :の左側がホストディレクトリ、:の右側がコンテナ上のディレクトリ
     volumes:
-      - "./docker/mysql/db-data:/var/lib/mysql"
+      - ./docker/mysql/db-data:/var/lib/mysql
       # 初期設定を読み込む
-      - "./docker/mysql/init/:/docker-entry-point-initdb.d"
+      - ./docker/mysql/init/:/docker-entry-point-initdb.d
   app: #service名
     links:
       - mysql
@@ -34,7 +34,7 @@ services:
     container_name: todo_app 
     tty: true #コンテナの起動永続化
     volumes:
-      - .:/go/src/jithub.com/nntakuya/todo_app #マウントディレクトリ指定
+      - .:/go/src/github.com/nntakuya/todo_app #マウントディレクトリ指定
     ports:
       - 8080:8080
  # トップレベルでvolumesを定義すると、各サービスからボリュームを参照できる
