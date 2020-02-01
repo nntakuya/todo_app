@@ -13,7 +13,7 @@ var (
 
 // Init is initialize db from mainfunction
 func Init() {
-  db, err = gorm.Open("mysql", "root:password@tcp(:3306)/todo_dev")
+  db, err = gorm.Open("mysql", "root:password@tcp(docker.for.mac.localhost:3306)/todo_dev")
 
   if err != nil {
     panic(err)
