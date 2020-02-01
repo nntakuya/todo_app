@@ -24,7 +24,7 @@ func (pc Controller) Index(c *gin.Context) {
 
 // Create action: POST /users
 func (pc Controller) Create(c *gin.Context) {
-  var s usre.Service
+  var s user.Service
   p, err := s.CreateModel(c)
 
   if err != nil {
@@ -53,8 +53,9 @@ func (pc Controller) Show(c *gin.Context) {
 func (pc Controller) Update(c *gin.Context) {
   id := c.Params.ByName("id")
   var s user.Service
+  p, err := s.UpdateByID(id, c)
 
-  if err := s.UpdateByID(id, c); err != nil {
+  if err != nil {
     c.AbortWithStatus(400)
     fmt.Println(err)
   } else {

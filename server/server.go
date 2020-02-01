@@ -2,7 +2,7 @@ package server
 
 import (
   "github.com/gin-gonic/gin"
-  "github.com/nntakuya/todo_app/controller"
+  "github.com/nntakuya/todo_app/controllers"
 )
 
 // Init is initialize server
@@ -21,7 +21,7 @@ func router() *gin.Engine {
     u.GET("/:id", ctrl.Show)
     u.POST("", ctrl.Create)
     u.PUT("/:id", ctrl.Update)
-    u.DELETE("/:id', ctrl.Delete)
+    u.DELETE("/:id", ctrl.Delete)
   }
 
   return r
