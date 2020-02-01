@@ -11,11 +11,11 @@ func main() {
     c.String(200, "Hello, World")
   })
 
-  db.Init()
+ // db.Init()
 
   r.Run()
 
-  db.Close()
+ // db.Close()
 }
 
 
