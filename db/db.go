@@ -3,6 +3,7 @@ package db
 import (
   "github.com/jinzhu/gorm"
   _ "github.com/jinzhu/gorm/dialects/mysql"
+  "github.com/nntakuya/todo_app/entity"
 )
 
 var (
@@ -17,6 +18,8 @@ func Init() {
   if err != nil {
     panic(err)
   }
+
+  autoMigration()
 }
 
 // GetDB is called in models
@@ -32,7 +35,7 @@ func Close() {
   }
 }
 
-
-
-
+func autoMigration() {
+  db.AutoMigrate(&entity.User{})
+}
 

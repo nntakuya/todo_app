@@ -1,10 +1,8 @@
-module work
+module github.com/nntakuya/todo_app
 
 go 1.12
 
 require (
-	github.com/ant0ine/go-json-rest v3.3.2+incompatible
 	github.com/gin-gonic/gin v1.5.0 // indirect
-	github.com/go-sql-driver/mysql v1.5.0
 	github.com/jinzhu/gorm v1.9.12
 )
